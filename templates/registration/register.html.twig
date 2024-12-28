@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'register.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container security-form">
+        <div class="login-form">
+            <h1>{{ 'register.header'|trans }}</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_widget(registrationForm.firstName, {"attr": {"class": "form form-control", "placeholder": "register.first_name"|trans}}) }}
+                <br>
+                {{ form_widget(registrationForm.lastName, {"attr": {"class": "form form-control", "placeholder": "register.last_name"|trans}}) }}
+                <br>
+                {{ form_widget(registrationForm.email, {"attr": {"class": "form form-control", "placeholder": "register.email"|trans}}) }}
+                <br>
+                {{ form_widget(registrationForm.plainPassword, {"attr": {"class": "form form-control", "placeholder": "register.password"|trans}}) }}
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'register.submit'|trans }}</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

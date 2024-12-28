@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'account.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ 'account.title'|trans }}{{ user.firstName }} {{ user.lastName|upper }}</h1>
+
+        {% include "layouts/_flash_message.html.twig" %}
+        <h2>{{ 'account.edit_profile'|trans }}</h2>
+        {{ form_start(form) }}
+            {{ form_widget(form.firstName, {attr: {"class": "form form-control", "placeholder": "account.new_first_name"|trans}}) }}
+            <br>
+            {{ form_widget(form.lastName, {attr: {"class": "form form-control", "placeholder": "account.new_last_name"|trans}}) }}
+            <br>
+            {{ form_widget(form.email, {attr: {"class": "form form-control", "placeholder": "account.new_email"|trans}}) }}
+            <br>
+            {{ form_widget(form.plainPassword, {attr: {"class": "form form-control", "placeholder": "account.new_password"|trans}}) }}
+            <br>
+            <button type="submit" class="btn btn-primary">{{ 'account.update_profile'|trans }}</button>
+        {{ form_end(form) }}
+
+        <h2>{{ 'account.orders'|trans }}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'account.order_id'|trans }}</th>
+                    <th>{{ 'account.total_amount'|trans }}</th>
+                    <th>{{ 'account.order_date'|trans }}</th>
+                    <th>{{ 'account.order_actions'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>
+                            {% set total = 0 %}
+                            {% for item in order.cartItems %}
+                                {% set total = total + (item.quantity * item.product.price) %}
+                            {% endfor %}
+                            {{ total }} €
+                        </td>
+                        <td>{{ order.purchaseDate|date('Y-m-d H:i') }}</td>
+                        <td>
+                            <a href="{{ path('order_show', { 'id': order.id }) }}">{{ 'account.view'|trans }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

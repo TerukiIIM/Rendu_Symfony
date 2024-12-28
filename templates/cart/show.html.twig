@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cart.show.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ 'cart.show.header'|trans }}</h1>
+
+        {% if cart and cart.cartItems|length > 0 %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ 'cart.show.product'|trans }}</th>
+                        <th>{{ 'cart.show.quantity'|trans }}</th>
+                        <th>{{ 'cart.show.price'|trans }}</th>
+                        <th>{{ 'cart.show.total'|trans }}</th>
+                        <th>{{ 'cart.show.actions'|trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set total = 0 %}
+                    {% for item in cart.cartItems %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.product.price }} €</td>
+                            <td>{{ item.quantity * item.product.price }} €</td>
+                            <td>
+                                <form action="{{ path('cart_remove', { 'id': item.id }) }}" method="post">
+                                    <button type="submit" class="btn btn-danger">{{ 'cart.show.remove'|trans }}</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% set total = total + (item.quantity * item.product.price) %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3>{{ 'cart.show.total_price'|trans }}: {{ total }} €</h3>
+            <form action="{{ path('cart_checkout', { 'id': cart.id }) }}" method="post">
+                <button type="submit" class="btn btn-primary">{{ 'cart.show.checkout'|trans }}</button>
+            </form>
+        {% else %}
+            <p>{{ 'cart.show.empty'|trans }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

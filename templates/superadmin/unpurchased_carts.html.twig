@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'unpurchased_carts.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ 'unpurchased_carts.header'|trans }}</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'unpurchased_carts.cart_id'|trans }}</th>
+                    <th>{{ 'unpurchased_carts.user'|trans }}</th>
+                    <th>{{ 'unpurchased_carts.contents'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cart in unpurchasedCarts %}
+                    <tr>
+                        <td>{{ cart.id }}</td>
+                        <td>{{ cart.user.email }}</td>
+                        <td>
+                            <ul>
+                                {% for item in cart.cartItems %}
+                                    <li>{{ item.product.name }} ({{ item.quantity }})</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

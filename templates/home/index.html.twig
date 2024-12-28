@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'home.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ 'home.product_list'|trans }}</h1>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-outline-primary" href="{{ path('product_new') }}">{{ 'home.add_new_product'|trans }}</a>
+        {% endif %}
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3 mt-4">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ path("product_show", {"id": product.id}) }}">
+                            <img src="{{ asset("uploads/"~product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                        </a>
+                        <div class="card-body">
+                            <a href="{{ path("product_show", {"id": product.id}) }}">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                            </a>
+                            <p class="card-text">{{ product.description|slice(0, 50) }} ...</p>
+                            <h3>{{ product.price }} {{ 'home.price'|trans }}</h3>
+                            <a href="{{ path('cart_add', { 'id': product.id }) }}" class="btn btn-success">{{ 'home.add_to_cart'|trans }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.index.title'|trans }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ 'product.index.header'|trans }}</h1>
+
+    {% include "layouts/_flash_message.html.twig" %}
+    <a class="btn btn-success" href="{{ path('product_new') }}">{{ 'product.index.create_new'|trans }}</a>
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ 'product.index.id'|trans }}</th>
+                <th>{{ 'product.index.name'|trans }}</th>
+                <th>{{ 'product.index.description'|trans }}</th>
+                <th>{{ 'product.index.price'|trans }}</th>
+                <th>{{ 'product.index.stock'|trans }}</th>
+                <th>{{ 'product.index.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description|slice(0, 50) }}...</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    {% if product.stock > 0 %}
+                        {{ product.stock }}
+                    {% else %}
+                        <span class="text-bg-danger">{{ 'product.index.sold_out'|trans }}</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{{ path('product_show', {'id': product.id}) }}">{{ 'product.index.show'|trans }}</a>
+                    <a class="btn btn-outline-success" href="{{ path('product_edit', {'id': product.id}) }}">{{ 'product.index.edit'|trans }}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">{{ 'product.index.no_records'|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

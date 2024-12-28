@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.edit.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <a class="btn btn-outline-primary" style="margin-top: 50px" href="{{ path('home') }}">{{ 'product.edit.back_to_list'|trans }}</a>
+        <h1>{{ 'product.edit.header'|trans }}</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form.name, {attr: {"class": "form form-control", "placeholder": "product.new.name_placeholder"|trans}}) }}
+        <br>
+        {{ form_widget(form.description, {attr: {"class": "form form-control", "placeholder": "product.new.description_placeholder"|trans}}) }}
+        <br>
+        {{ form_widget(form.price, {attr: {"class": "form form-control", "placeholder": "product.new.price_placeholder"|trans}}) }}
+        <br>
+        {{ form_widget(form.image, {attr: {"class": "form form-control", "placeholder": "product.new.image_placeholder"|trans}}) }}
+        <br>
+        <button class="btn btn-primary btn-block">{{ button_label|default('product.new.save'|trans) }}</button>
+        {{ form_end(form) }}
+
+        <br>
+        {{ include('product/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

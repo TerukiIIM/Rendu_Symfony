@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'error.title'|trans }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="alert alert-danger text-center">
+                <h1 class="display-4">{{ 'error.header'|trans }}</h1>
+                <p class="lead">{{ 'error.message'|trans }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.show.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="card mb-3" style="margin-top: 50px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ asset("uploads/"~product.image) }}" class="img-fluid rounded-start" alt="{{ product.name }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ product.name }}</h1>
+                        <p class="card-text">{{ product.description }}</p>
+                        <h3>{{ product.price }} €</h3>
+                        <a class="btn btn-outline-success" href="{{ path('cart_add', { 'id': product.id }) }}">{{ 'product.show.add_to_cart'|trans }}</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-primary" href="{{ path('product_edit', { 'id': product.id }) }}">{{ 'product.show.edit'|trans }}</a>
+                            <a class="btn btn-danger" href="{{ path('product_delete', { 'id': product.id }) }}">{{ 'product.show.delete'|trans }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>{{ 'product.show.latest_products'|trans }}</h2>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3 mt-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset("uploads/"~product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <a href="{{ path("product_show", {"id": product.id}) }}">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                            </a>
+                            <p class="card-text">{{ product.description|slice(0, 50) }}...</p>
+                            <h3>{{ product.price }} €</h3>
+                            <a href="{{ path('cart_add', { 'id': product.id }) }}" class="btn btn-outline-success">{{ 'product.show.add_to_cart'|trans }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order Details
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Order Details</h1>
+
+		{% include "layouts/_flash_message.html.twig" %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{ 'cart.show.product'|trans }}</th>
+					<th>{{ 'cart.show.quantity'|trans }}</th>
+					<th>{{ 'cart.show.price'|trans }}</th>
+					<th>{{ 'cart.show.total'|trans }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% set total = 0 %}
+				{% for item in order.cartItems %}
+					<tr>
+						<td>{{ item.product.name }}</td>
+						<td>{{ item.quantity }}</td>
+						<td>{{ item.product.price }} €</td>
+						<td>{{ item.quantity * item.product.price }} €</td>
+					</tr>
+					{% set total = total + (item.quantity * item.product.price) %}
+				{% endfor %}
+			</tbody>
+		</table>
+		<br>
+		<h3>Order Date: {{ order.purchaseDate|date('Y-m-d H:i') }}</h3>
+		<h2>{{ 'cart.show.total_price'|trans }}: {{ total }} €</h2>
+	</div>
+{% endblock %}
