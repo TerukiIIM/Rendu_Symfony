@@ -1,0 +1,166 @@
+navbar:
+    brand: "E-Commerce"
+    home: "Accueil"
+    products: "Produits"
+    new_products: "Nouveaux Produits"
+    cart: "Panier"
+    register: "S'inscrire"
+    login: "Connexion"
+    logout: "Déconnexion"
+    profile: "Profil"
+    moderation: "Modération"
+    unpurchased_carts: "Paniers non achetés"
+    recent_users: "Utilisateurs Recent"
+
+register:
+    title: "Inscription"
+    header: "Inscription"
+    first_name: "Prénom"
+    last_name: "Nom"
+    email: "Email"
+    password: "Mot de passe"
+    submit: "S'inscrire"
+
+login:
+    title: "Connexion"
+    logged_in_as: "Vous êtes connecté en tant que %username%"
+    logout: "Déconnexion"
+    header: "Connexion"
+    email: "Email"
+    password: "Mot de passe"
+    sign_in: "Se connecter"
+
+home:
+    title: "Accueil"
+    product_list: "Liste des produits"
+    add_new_product: "Ajouter un nouveau produit"
+    price: "€"
+    add_to_cart: "Ajouter au panier"
+
+product:
+    index:
+        title: "Index des produits"
+        header: "Index des produits"
+        id: "Id"
+        name: "Nom"
+        description: "Description"
+        price: "Prix"
+        stock: "Stock"
+        actions: "Actions"
+        sold_out: "Rupture de stock"
+        show: "Voir"
+        edit: "Modifier"
+        no_records: "Aucun enregistrement trouvé"
+        create_new: "Créer nouveau"
+
+    new:
+        title: "Nouveau Produit"
+        header: "Créer un nouveau produit"
+        save: "Enregistrer"
+        back_to_list: "Retour à la liste"
+        name_placeholder: "Entrez le nom du produit"
+        description_placeholder: "Entrez la description du produit"
+        price_placeholder: "Entrez le prix du produit"
+        stock_placeholder: "Entrez le stock du produit"
+        image_placeholder: "Téléchargez l'image du produit"
+
+    show:
+        title: "Détails du produit"
+        add_to_cart: "Ajouter au panier"
+        latest_products: "Derniers produits ajoutés"
+        edit: "Modifier"
+        delete: "Supprimer"
+
+    edit:
+        title: "Modifier le produit"
+        back_to_list: "Retour à la liste"
+        header: "Modifier le produit"
+
+    delete:
+        confirm: "Êtes-vous sûr de vouloir supprimer cet article ?"
+        button: "Supprimer"
+
+account:
+    title: "Compte de "
+    orders: "Mes Commandes"
+    order_id: "ID de Commande"
+    total_amount: "Montant Total"
+    order_date: "Date de Commande"
+    order_actions: "Actions"
+    view: "Voir"
+    edit_profile: "Modifier le Profil"
+    update_profile: "Mettre à jour le Profil"
+    new_first_name: "Entrez votre prénom"
+    new_last_name: "Entrez votre nom de famille"
+    new_email: "Entrez votre email"
+    new_password: "Entrez un nouveau mot de passe (laissez vide pour conserver le mot de passe actuel)"
+
+cart:
+    show:
+        title: "Mon Panier"
+        header: "Mon Panier"
+        product: "Produit"
+        quantity: "Quantité"
+        price: "Prix"
+        total: "Total"
+        total_price: "Prix Total"
+        checkout: "Passer à la caisse"
+        empty: "Votre panier est vide"
+        actions: "Actions"
+        remove: "Supprimer"
+
+unpurchased_carts:
+    title: "Paniers non achetés"
+    header: "Paniers non achetés"
+    cart_id: "ID du Panier"
+    user: "Utilisateur"
+    contents: "Contenu"
+
+recent_users:
+    title: "Utilisateurs Recent"
+    header: "Utilisateurs Recent"
+    user_id: "ID Utilisateur"
+    email: "Email"
+    first_name: "Prénom"
+    last_name: "Nom"
+    registration_date: "Date d'inscription"
+
+error:
+    title: "Une erreur est survenue"
+    header: "Une erreur est survenue"
+    message: "Désolé, quelque chose s'est mal passé. Veuillez réessayer plus tard."
+
+error400:
+    title: "Mauvaise requête"
+    header: "Mauvaise requête"
+    message: "Le serveur n'a pas pu comprendre la requête en raison d'une syntaxe invalide."
+
+error401:
+    title: "Non autorisé"
+    header: "Non autorisé"
+    message: "Vous devez vous connecter pour accéder à cette page."
+
+error403:
+    title: "Accès refusé"
+    header: "Accès refusé"
+    message: "Vous n'avez pas la permission d'accéder à cette page."
+
+error404:
+    title: "Page non trouvée"
+    header: "Page non trouvée"
+    message: "La page que vous recherchez n'existe pas."
+
+error500:
+    title: "Erreur interne du serveur"
+    header: "Erreur interne du serveur"
+    message: "Quelque chose s'est mal passé. Veuillez réessayer plus tard."
+
+error502:
+    title: "Mauvaise passerelle"
+    header: "Mauvaise passerelle"
+    message: "Le serveur a reçu une réponse invalide du serveur en amont."
+
+error503:
+    title: "Service indisponible"
+    header: "Service indisponible"
+    message: "Le serveur est actuellement incapable de traiter la demande en raison d'une surcharge temporaire ou d'une maintenance."

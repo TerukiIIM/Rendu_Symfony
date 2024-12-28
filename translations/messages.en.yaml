@@ -1,0 +1,166 @@
+navbar:
+    brand: "E-Commerce"
+    home: "Home"
+    products: "Products"
+    new_products: "New Products"
+    cart: "Cart"
+    register: "Register"
+    login: "Login"
+    logout: "Logout"
+    profile: "Profile"
+    moderation: "Moderation"
+    unpurchased_carts: "Unpurchased Carts"
+    recent_users: "Recent Users"
+
+register:
+    title: "Register"
+    header: "Register"
+    first_name: "First Name"
+    last_name: "Last Name"
+    email: "Email"
+    password: "Password"
+    submit: "Register"
+
+login:
+    title: "Log in"
+    logged_in_as: "You are logged in as %username%"
+    logout: "Logout"
+    header: "Connexion"
+    email: "Email"
+    password: "Password"
+    sign_in: "Sign in"
+
+home:
+    title: "Home"
+    product_list: "Product List"
+    add_new_product: "Add a new product"
+    price: "$"
+    add_to_cart: "Add to cart"
+
+product:
+    index:
+        title: "Product Index"
+        header: "Product Index"
+        id: "Id"
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        stock: "Stock"
+        actions: "Actions"
+        sold_out: "Sold Out"
+        show: "Show"
+        edit: "Edit"
+        no_records: "No records found"
+        create_new: "Create new"
+
+    new:
+        title: "New Product"
+        header: "Create new Product"
+        save: "Save"
+        back_to_list: "Back to list"
+        name_placeholder: "Enter product name"
+        description_placeholder: "Enter product description"
+        price_placeholder: "Enter product price"
+        stock_placeholder: "Enter product stock"
+        image_placeholder: "Upload product image"
+
+    show:
+        title: "Product Details"
+        add_to_cart: "Add To Cart"
+        latest_products: "Latest Added Products"
+        edit: "Edit"
+        delete: "Delete"
+
+    edit:
+        title: "Edit Product"
+        back_to_list: "Back to list"
+        header: "Edit Product"
+
+    delete:
+        confirm: "Are you sure you want to delete this item?"
+        button: "Delete"
+
+account:
+    title: "Account of "
+    orders: "My Orders"
+    order_id: "Order ID"
+    total_amount: "Total Amount"
+    order_date: "Order Date"
+    order_actions: "Actions"
+    view: "View"
+    edit_profile: "Edit Profile"
+    update_profile: "Update Profile"
+    new_first_name: "Enter your first name"
+    new_last_name: "Enter your last name"
+    new_email: "Enter your email"
+    new_password: "Enter a new password (leave blank to keep current password)"
+
+cart:
+    show:
+        title: "My Cart"
+        header: "My Cart"
+        product: "Product"
+        quantity: "Quantity"
+        price: "Price"
+        total: "Total"
+        total_price: "Total Price"
+        checkout: "Checkout"
+        empty: "Your cart is empty"
+        actions: "Actions"
+        remove: "Remove"
+
+unpurchased_carts:
+    title: "Unpurchased Carts"
+    header: "Unpurchased Carts"
+    cart_id: "Cart ID"
+    user: "User"
+    contents: "Contents"
+
+recent_users:
+    title: "Recent Users"
+    header: "Recent Users"
+    user_id: "User ID"
+    email: "Email"
+    first_name: "First Name"
+    last_name: "Last Name"
+    registration_date: "Registration Date"
+
+error:
+    title: "An Error Occurred"
+    header: "An Error Occurred"
+    message: "Sorry, something went wrong. Please try again later."
+
+error400:
+    title: "Bad Request"
+    header: "Bad Request"
+    message: "The server could not understand the request due to invalid syntax."
+
+error401:
+    title: "Unauthorized"
+    header: "Unauthorized"
+    message: "You need to log in to access this page."
+
+error403:
+    title: "Access Denied"
+    header: "Access Denied"
+    message: "You do not have permission to access this page."
+
+error404:
+    title: "Page Not Found"
+    header: "Page Not Found"
+    message: "The page you are looking for does not exist."
+
+error500:
+    title: "Internal Server Error"
+    header: "Internal Server Error"
+    message: "Something went wrong. Please try again later."
+
+error502:
+    title: "Bad Gateway"
+    header: "Bad Gateway"
+    message: "The server received an invalid response from the upstream server."
+
+error503:
+    title: "Service Unavailable"
+    header: "Service Unavailable"
+    message: "The server is currently unable to handle the request due to a temporary overload or maintenance."
